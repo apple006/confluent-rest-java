@@ -1,0 +1,17 @@
+ports:
+  - 8082
+
+links:
+  - zookeeper
+  - kafka
+  - confluent-schema-registry:sr
+
+env:
+  rp_id: confluent-kafka-proxy
+  rp_zookeeper_connect: zookeeper:2181
+  rp_consumer_instance_timeout_ms: 360000
+
+healthChecks:
+  logPatterns:
+    - pattern: Server started
+      timeout: 10000

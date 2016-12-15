@@ -1,0 +1,11 @@
+links:
+  - zookeeper
+  - kafka
+
+env:
+  sr_kafkastore_connection_url: zookeeper:2181
+
+healthChecks:
+  logPatterns:
+    - pattern: Server started
+      timeout: 10000
